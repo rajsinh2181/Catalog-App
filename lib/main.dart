@@ -21,13 +21,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
         textTheme : GoogleFonts.aclonicaTextTheme(),
       ),
-      debugShowCheckedModeBanner: false,
+      // debugShowCheckedModeBanner: false,
       // themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
         brightness : Brightness.dark,
         primarySwatch: Colors.lightGreen
       ),
-      initialRoute : "/",
+      initialRoute : MyRoutes.loginRoute,
       routes: {
         MyRoutes.loginRoute : (context) => LoginPage(),
         MyRoutes.homeRoute : (context) => HomePage(),
