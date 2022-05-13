@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer.dart';
+
 
 class HomePage extends StatelessWidget {
   final double days = 3;
@@ -18,7 +20,7 @@ class HomePage extends StatelessWidget {
             child: Text("hello $name $temp and"),
         ),
       ),
-      drawer : Drawer(),
+      drawer : MyDrawer(),
     );
   }
 }

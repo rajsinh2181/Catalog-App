@@ -47,11 +47,9 @@ class _LoginPageState extends State<LoginPage> {
               Image.asset(
                 "assets/images/login_page.png",
                 fit: BoxFit.cover,
-                // height : 1000,
               ),
               const SizedBox(
                 height : 40.0,
-                // child : Text("hello world",),
               ),
               Text (
                "Welcome, $name", 
@@ -100,48 +98,48 @@ class _LoginPageState extends State<LoginPage> {
                         }
                         if(value.isEmpty){
                           return ("Password can't be empty");
-                        } else if(value!=null && value.length < 6){
+                        } else if(value.length < 6){
                           return ("Password length must be greater than 6");
                         }
                         notNullPass = true;
                         return null;
                       },
                     ),
+                     const SizedBox(
+                      height : 40.0,
+                    ),
+                    Material(
+                      color: Colors.white,
+                      borderRadius: 
+                        BorderRadius.circular(changeButton ? 25 : 7),
+                      child: InkWell( 
+                        onTap: () => moveToHome(context),
+                        child: AnimatedContainer(
+                          duration: Duration(seconds : 1 ),
+                          width : changeButton ? 50 : 150,
+                          height : 50,
+                          alignment: Alignment.center,
+                          child : changeButton ? const Icon(
+                            Icons.done,
+                            color : Colors.blue,
+                          ) : Text(
+                            "Login", 
+                            style: TextStyle(
+                              color : Colors.blue[900],
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              ),
+                            ),
+                            // decoration: BoxDecoration(
+                            //     color: Colors.white,
+                            //     // shape : changeButton ? BoxShape.circle : BoxShape.rectangle,
+                            // ),
+                        ),
+                      ),
+                    )  
                   ],
                 ),
               ),
-            const SizedBox(
-                height : 40.0,
-              ),
-              Material(
-                color: Colors.white,
-                borderRadius: 
-                  BorderRadius.circular(changeButton ? 25 : 7),
-                child: InkWell( 
-                  onTap: () => moveToHome(context),
-                  child: AnimatedContainer(
-                    duration: Duration(seconds : 1 ),
-                    width : changeButton ? 50 : 150,
-                    height : 50,
-                    alignment: Alignment.center,
-                    child : changeButton ? const Icon(
-                      Icons.done,
-                      color : Colors.blue,
-                    ) : Text(
-                      "Login", 
-                      style: TextStyle(
-                        color : Colors.blue[900],
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        ),
-                      ),
-                      // decoration: BoxDecoration(
-                      //     color: Colors.white,
-                      //     // shape : changeButton ? BoxShape.circle : BoxShape.rectangle,
-                      // ),
-                  ),
-                ),
-              )  
             ],
           ),
         ),
