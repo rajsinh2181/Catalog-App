@@ -12,12 +12,30 @@ class HomePage extends StatelessWidget {
       appBar : AppBar(
         title : Text("catalog app"),
       ),
-      body : Center(
-        child: Container(
-            child: Text(""),
+      
+      body : Container(
+        child: Text(context.runtimeType.toString()),
+        height : 350,
+        width : 350,
+        color : Colors.green,
+        constraints: BoxConstraints(
+          maxHeight : 200,
+          minHeight: 70,
+          minWidth: 70,
+          maxWidth: 200,
         ),
+        
       ),
+      
+      
       drawer : MyDrawer(),
     );
   }
 }
+
+
+/*child: Container(
+        alignment: Alignment.bottomRight,
+        color: Colors.pink,
+        ),
+        */
