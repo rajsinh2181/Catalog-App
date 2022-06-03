@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:flutter_app/models/catalog.dart';
+import 'package:flutter_app/widgets/items_widget.dart';
 
 import '../widgets/drawer.dart';
 
@@ -8,22 +10,21 @@ import '../widgets/drawer.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(8,(index)=>CatalogModel.items[0]);
     return Scaffold(
       appBar: AppBar(
         title: Text("Catalog App"),
       ),
-      body: Container(
-        child: Text(context.runtimeType.toString()),
-        height : 350,
-        width : 350,
-        color : Colors.green,
-        constraints: BoxConstraints(
-          maxHeight : 200,
-          minHeight: 70,
-          minWidth: 70,
-          maxWidth: 200,
+      body:Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: (context,index){
+            return ItemWidget(
+              item : dummyList[index]
+              );
+          },
         ),
-        
       ),
       drawer: MyDrawer(),
     );
@@ -31,33 +32,4 @@ class HomePage extends StatelessWidget {
 }
 
 
-
-// class HomePage extends StatelessWidget {
-    
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar : AppBar(
-//         title : Text("catalog app"),
-//       ),
-      
-//       body : Container(
-//         child: Text(context.runtimeType.toString()),
-//         height : 350,
-//         width : 350,
-//         color : Colors.green,
-//         constraints: BoxConstraints(
-//           maxHeight : 200,
-//           minHeight: 70,
-//           minWidth: 70,
-//           maxWidth: 200,
-//         ),
-        
-//       ),
-      
-      
-//       drawer : MyDrawer(),
-//     );
-//   }
-// }
 
