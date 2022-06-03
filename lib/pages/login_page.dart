@@ -36,7 +36,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
     return Material(
       color: Color.fromRGBO(33, 150, 243, 1),
       child : SingleChildScrollView(
