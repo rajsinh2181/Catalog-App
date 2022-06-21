@@ -22,13 +22,9 @@ class  ItemWidget extends StatelessWidget {
         leading: Image.network(item.image),
         title: Text(item.name),
         subtitle: Text(item.desc),
-        trailing: Text(
-          "\$${999}",
-          style: TextStyle(
-            color : Colors.blueGrey,
-            fontWeight: FontWeight.bold,
-          )
-          ),
+        trailing: Text("\$${item.price}",
+        textScaleFactor: 1.2,
+         ),
       ),
     );
   }
