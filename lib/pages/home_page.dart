@@ -39,15 +39,15 @@ await Future.delayed(Duration(seconds : 2));
   Widget build(BuildContext context) {
     
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
       onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-      backgroundColor: MyTheme.darkBluishColor,
+      backgroundColor: Colors.white,
       child : Icon(CupertinoIcons.cart),
       ),
       body: SafeArea(
         child: Container(
-          padding : Vx.m16,
+          padding : Vx.m12,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children : [

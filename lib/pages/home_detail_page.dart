@@ -16,19 +16,19 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.transparent,),
-      backgroundColor : MyTheme.creamColor,
+      backgroundColor : context.canvasColor,
       bottomNavigationBar:  Container(
-        color : Colors.white,
+        color : context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
             children: [
-              "\$${catalog.price}".text.bold.xl4.red900.make(),
+              "\$${catalog.price}".text.bold.xl4.color(context.theme.highlightColor).make(),
               ElevatedButton(
                 onPressed: (){},
                 child: "Add to cart".text.make(),
                   style : ButtonStyle( 
                   backgroundColor: MaterialStateProperty.all(
-                    MyTheme.greyishblueColor 
+                    context.theme.buttonColor,
                   ),
                   shape: MaterialStateProperty.all(StadiumBorder())
                 ) 
@@ -52,10 +52,10 @@ class HomeDetailPage extends StatelessWidget {
                 edge: VxEdge.TOP,
                 child: Container(
                   width: context.screenWidth,
-                  color : Colors.white,
+                  color : context.cardColor,
                   child : Column(
                     children : [
-                    catalog.name.text.xl4.bold.color(MyTheme.darkBluishColor).make(),
+                    catalog.name.text.xl4.bold.color(context.accentColor).make(),
                     catalog.desc.text.fade.gray400.sm.make(),
                     "Ut sed rebum eirmod justo nonumy sed erat stet magna. Eirmod lorem dolore et invidunt et. Et sea amet diam vero vero sit dolores et. Tempor kasd nonumy dolor sit ea eos rebum, kasd et sed sed consetetur accusam rebum,".
                     text.fade.gray400.make().p16(),

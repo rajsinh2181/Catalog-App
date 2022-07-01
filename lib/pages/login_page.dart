@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_app/utils/routes.dart';
+import 'package:flutter_app/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -37,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Color.fromRGBO(33, 150, 243, 1),
+      color: context.canvasColor,
       child : SingleChildScrollView(
         child: Form(
           key : _formKey,
@@ -108,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                       height : 40.0,
                     ),
                     Material(
-                      color: Colors.white,
+                      color: context.theme.buttonColor,
                       borderRadius: 
                         BorderRadius.circular(changeButton ? 25 : 7),
                       child: InkWell( 
@@ -120,11 +122,11 @@ class _LoginPageState extends State<LoginPage> {
                           alignment: Alignment.center,
                           child : changeButton ? const Icon(
                             Icons.done,
-                            color : Colors.blue,
+                            color : Colors.white,
                           ) : Text(
                             "Login", 
                             style: TextStyle(
-                              color : Colors.blue[900],
+                              color : context.accentColor,
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                               ),

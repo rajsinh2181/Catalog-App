@@ -47,8 +47,8 @@ class CatalogItem extends StatelessWidget {
         child: VxBox(
           child: Row (
             children : [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0,0,10,0),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(12,0,10,0),
                   child: Hero(
                     tag : Key(catalog.id.toString()),
                     child: CatalogImage(
@@ -61,7 +61,7 @@ class CatalogItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                        catalog.name.text.lg.bold.color(MyTheme.darkBluishColor).make(),
+                        catalog.name.text.lg.bold.color(context.accentColor).make(),
                         catalog.desc.text.fade.gray400.sm.make(),
                         ButtonBar(
                         alignment: MainAxisAlignment.spaceBetween,
@@ -72,7 +72,7 @@ class CatalogItem extends StatelessWidget {
                               child: "Add to cart".text.make(),
                                style : ButtonStyle( 
                                 backgroundColor: MaterialStateProperty.all(
-                                  MyTheme.greyishblueColor
+                                  context.theme.buttonColor,
                                 ),
                                 shape: MaterialStateProperty.all(StadiumBorder())
                               ) 
@@ -84,7 +84,7 @@ class CatalogItem extends StatelessWidget {
                 )
             ],
           )
-        ).white.roundedSM.py16.square(180).make(),
+        ).color(context.cardColor).roundedSM.py16.square(180).make(),
     );
   }
 }
