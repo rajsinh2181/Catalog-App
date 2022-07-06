@@ -54,10 +54,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Text (
                "Welcome, $name", 
-               style : const TextStyle(
+               style : TextStyle(
+                color : context.accentColor,
                  fontSize: 34,
-                 fontWeight: FontWeight.bold,
-                 color: Colors.white,
+                 fontWeight: FontWeight.bold, 
                )
               ),
               const SizedBox(
