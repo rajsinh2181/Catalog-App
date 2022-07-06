@@ -11,6 +11,7 @@ class MyTheme{
     canvasColor: creamColor,
     buttonColor: greyishblueColor,
     accentColor:  Colors.blueAccent,
+    highlightColor: Vx.gray400,
     appBarTheme : AppBarTheme(
       color : Colors.white,
       elevation : 0.0,

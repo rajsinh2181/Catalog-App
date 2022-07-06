@@ -42,7 +42,7 @@ await Future.delayed(Duration(seconds : 2));
       backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
       onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-      backgroundColor: Colors.white,
+      backgroundColor: context.theme.buttonColor,
       child : Icon(CupertinoIcons.cart),
       ),
       body: SafeArea(
