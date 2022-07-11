@@ -1,15 +1,20 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/store.dart';
 import 'package:flutter_app/pages/cart_page.dart';
 import 'package:flutter_app/pages/login_page.dart';
 import 'package:flutter_app/utils/routes.dart';
 import 'package:flutter_app/widgets/themes.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'pages/home_page.dart';
 import 'pages/login_page.dart';
 
 void main(){
-  runApp(MyApp());
+  runApp(VxState(
+    store : Mystore(),
+    child: MyApp(),
+    )
+    );
 }
 class MyApp extends StatelessWidget {
 
