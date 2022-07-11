@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/store.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../models/cart.dart';
@@ -14,14 +15,17 @@ class AddToCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context,on:[AddMutation]);
+    final CartModel _cart = (VxState.store as Mystore).cart;
     bool isInCart = _cart.items.contains(catalog);
     return ElevatedButton(
       onPressed: (){
         if(!isInCart){
-        final _catalog = CatalogModel();
-        isInCart = isInCart.toggle();
-        _cart.catalog = _catalog;
-        _cart.add(catalog);
+        // final _catalog = CatalogModel();
+        // isInCart = isInCart.toggle();
+        // _cart.catalog = _catalog;
+        // _cart.add(catalog);
+        AddMutation(catalog);
         }
       },
       child: isInCart? Icon(Icons.done) :Icon(CupertinoIcons.bag_fill_badge_plus),
